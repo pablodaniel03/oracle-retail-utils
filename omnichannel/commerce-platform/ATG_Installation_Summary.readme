@@ -1,0 +1,217 @@
+-------------------------------------------
+Endeca Search Guided Navigation
+-------------------------------------------
+ EAC Service Port:             8888
+ EAC Service Shutdown Port:    8090
+
+ CAS Server Port:              8500
+ CAS Server Shutdown Port:     8506
+
+ MDEX LiveDgraph Port:         15000
+ MDEX AuthoringDgraph Port:    15002
+ MDEX LogServer Port:          15010
+
+ Workbench Port:               8006
+ Workbench User:               admin
+ Workbench Password:           Admin1234
+
+
+-------------------------------------------
+Oracle Database 12c
+-------------------------------------------
+ Global DB Name:               oracle
+ Pluggable DB Name:            atgdb
+ Password:                     Oracle1
+
+
+-------------------------------------------
+ATG Commerce Platform - Agent (CSC)
+-------------------------------------------
+
+
+
+-------------------------------------------
+ATG Commerce Platform
+-------------------------------------------
+ JBoss Listen Port:            8080
+ ATG RMI Port:                 8860
+
+ CIM Administrator Password:	Commerce.1
+ Merchandising Login:              merchandising/Commerce.1
+ Service Super Admin Login:        service/Commerce.1
+
+ Publishing Admin Login:           admin/Commerce.1
+
+ Products selected:
+       *[2]  Oracle Commerce REST - 
+                  RESTful Web Services
+
+       *[4]  Oracle Commerce Site Administration - 
+              Includes Commerce Platform and Content Administration
+
+       *[5]  Oracle Commerce Platform-Guided Search Integration - 
+              Includes Commerce Platform. Select this option when Commerce Guided Search is used.
+
+       *[6]  Content Administration - 
+              Includes Oracle Commerce Platform.  Optional: Preview
+
+       *[8]  Oracle Commerce CAS Reader - 
+                  Includes Commerce Platform. 
+                   Select this option when Commerce Platform is used to import data to Commerce CAS.
+
+       *[9]  Oracle Commerce Service Center - 
+                  Agent-facing commerce application
+
+       *[10]  Oracle Commerce Reference Store - 
+                  Includes the Oracle Commerce Platform
+                  Oracle Commerce Platform-Guided Search Integration
+                  Content Administration
+                  Site Administration
+                  Core Commerce 
+                  Merchandising
+                  Optional: Data warehouse components and Preview
+
+       * Non-Switching Datasource
+       * Index by SKU
+       * Configure Experience Manager Preview to run on the Production Server.
+       * Multi Site
+       * Commerce Catalog Search
+
+
+ CIM:
+   Production Lock Server Hostname:       localhost
+   Production Lock Server Port:           9012
+   Production Application Server Port:    8180
+   Preview Host Name:                     localhost
+   Preview Port:                          8080
+   Context Root Preview Application:      crs
+   User segment Server:                   localhost
+   User segment Server Port:              8080
+
+   SMTP Email Host Name:                  localhost
+   SMTP Email Port Number:                25
+
+   Authoring application config path:     /u01/Endeca/Apps/CRS/data/workbench/generation_data/CRS
+   Application config archive path:       /u01/Endeca/Apps/CRS/data/workbench/application_export_archive/CRS
+
+   Deployment of CRS EAC Application
+    App Deployment Path:                  /u01/Endeca/Apps
+    CAS Path:                             /u01/Endeca/CAS/11.2.0
+    MDEX Path:                            /u01/Endeca/MDEX/6.5.2
+    PlatformService Path:                 /u01/Endeca/PlatformServices/11.2.0
+    ToolsAndFrameworks Path:              /u01/Endeca/ToolsAndFrameworks/11.2.0
+    Oracle Wallet jps-config.xml:         /u01/Endeca/ToolsAndFrameworks/11.2.0/server/workspace/credential_store/jps-config.xml
+
+
+
+
+Application Server (JBoss)
+-------------------------------------------
+ JBoss Home Path:       /u01/JBoss-EAP-6.4
+ OPSS Security PAth:    /u01/ATG/ATG11.2/home/security 
+ 
+
+ Publishing:
+       HTTP Port:                                8280
+       HTTPS Port:                               8643
+       Site HTTP Port:                           8280
+       RMI Port:                                 8862
+       DRP Port:                                 8852
+       File Deployment Port:                     8812
+       File Synchronization Deploy Server Port:  8817
+       Lock Server Port:                         9010
+
+       JBoss Management:
+         http://localhost:10190/console
+         admin/Admin1234
+
+       Dynamo:
+         http://localhost:8280/dyn/admin
+         admin/Commerce.1
+
+       Business Control Center:
+         http://localhost:8280/atg/bcc
+         admin/Commerce.1
+
+
+ Production:
+       HTTP Port:                                8180
+       HTTPS Port:                               8543
+       Site HTTP Port:                           8180
+       RMI Port:                                 8861
+       DRP Port:                                 8851
+       File Deployment Port:                     8811
+       Lock Server Port:                         9012
+
+       JBoss Management:
+         http://localhost:10090/console
+         admin/Admin1234
+
+       Dynamo:
+         http://localhost:8180/dyn/admin
+         admin/Commerce.1
+
+
+ Commerce Agent:
+       Default Catalog ID:                       crs_catalog_id
+       Default Site ID:                          CRS
+       Commerce Catalog Search URI:              /browse
+
+       HTTP Port:                                8380
+       HTTPS Port:                               8743
+       RMI Port:                                 8863
+       DRP Port:                                 8853
+       File Deployment Port:                     8813
+       File Synchronization Deploy Server Port:  8818
+       Agent Lock Server Hostname:               localhost
+       Agent Lock Server Port:                   9011
+
+
+Database (MySQL)
+-------------------------------------------
+ MySQL Port:            3306
+ MySQL User Name:       ATG_ADMIN
+
+ Production
+      Database Name:    ATG_PROD
+      URL:              jdbc:mysql://127.0.0.1:3306/ATG_PROD
+      Driver Path:      /u01/ATG/ATG11.2/MySQL/mysql-connector-java-5.1.48.jar
+      JNDI Name:        ATGProductionDS
+
+ Agent
+      Database Name:    ATG_PUB
+      URL:              jdbc:mysql://127.0.0.1:3306/ATG_PUB
+      Driver Path:      /u01/ATG/ATG11.2/MySQL/mysql-connector-java-5.1.48.jar
+      JNDI Name:        ATGPublishingDS
+
+ Publishing
+      Database Name:    ATG_AGENT
+      URL:              jdbc:mysql://127.0.0.1:3306/ATG_AGENT
+      Driver Path:      /u01/ATG/ATG11.2/MySQL/mysql-connector-java-5.1.48.jar
+      JNDI Name:        ATGAgentDS
+
+Database (Oracle)
+-------------------------------------------
+ Production
+      Database Name:    ATG_PROD
+      URL:              jdbc:oracle:thin:@127.0.0.1:1521:oracle
+      Driver Path:      /u01/Oracle/db/12c/dbhome_1/dmu/jlib/ojdbc6.jar
+      JNDI Name:        ATGProductionDS
+
+ Agent
+      Database Name:    ATG_PUB
+      URL:              jdbc:oracle:thin:@127.0.0.1:1521:oracle
+      Driver Path:      /u01/Oracle/db/12c/dbhome_1/dmu/jlib/ojdbc6.jar
+      JNDI Name:        ATGPublishingDS
+
+ Publishing
+      Database Name:    ATG_AGENT
+      URL:              jdbc:oracle:thin:@127.0.0.1:1521:oracle
+      Driver Path:      /u01/Oracle/db/12c/dbhome_1/dmu/jlib/ojdbc6.jar
+      JNDI Name:        ATGAgentDS
+
+
+
+
+ 
+

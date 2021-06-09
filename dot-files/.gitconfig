@@ -1,0 +1,7 @@
+[user]
+	name = <YOUR NAME>
+	email = <YOUR EMAIL>
+[core]
+	longpaths = true
+[http]
+	sslverify = false
