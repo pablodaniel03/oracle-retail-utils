@@ -5,6 +5,7 @@ apt upgrade -y
 
 apt install -y build-essential
 apt install -y libncurses-dev
+apt install -y zip zstd
 apt install -y zsh tree bat fzy
 apt install -y nodejs npm
 apt install -y python3 python3-pip python3-dev
